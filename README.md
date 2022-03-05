@@ -1,6 +1,6 @@
 <br/>
 
-<p align="center"><a href="http://www.utfpr.edu.br/" target="_blank"><img src="https://github.com/yuriBaza23/UTFPR_BCC/blob/main/.github/assets/utfpr.png?raw=true" height="70"></a></p>
+<p align="center"><a href="http://www.utfpr.edu.br/" target="_blank"><img src="https://github.com/yuriBaza23/UTFPR_BCC/blob/main/.github/assets/utfpr.png?raw=true" height="100"></a></p>
 
 <br/>
 
