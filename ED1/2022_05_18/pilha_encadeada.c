@@ -104,3 +104,7 @@ void inverter(char* str) {
 	pilha_imprimir(p);
 	pilha_inverter(p);
 }
+
+int calcular_pos(char* expressao) {
+	return 0;
+}

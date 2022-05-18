@@ -9,6 +9,8 @@ int main(){
   printf("**************************************\n\n");
 
   char str[6] = "UTFPR";
+  char expressao[6] = "234*+";
 
   inverter(str);
+  calcular_pos(expressao);
 }

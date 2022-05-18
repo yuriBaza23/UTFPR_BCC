@@ -25,5 +25,6 @@ void pilha_inverter(Pilha* p);
 int  pilha_calcularPos(char* expressao);
 
 void inverter(char* str);
+int calcular_pos(char* expressao);
 
 #endif
