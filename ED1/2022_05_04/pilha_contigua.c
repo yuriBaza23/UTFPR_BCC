@@ -156,6 +156,6 @@ bool pilha_toString(Pilha* f, char* str) {
       strcat(str, ", ");
     }
   }
-    strcat(str, "]");
-    return str;
+  strcat(str, "]");
+  return str;
 }

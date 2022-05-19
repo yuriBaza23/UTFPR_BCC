@@ -1,5 +1,6 @@
 #include "pilha.h"
 #include "string.h"
+#include <ctype.h>
 
 /**************************************
 * DADOS
@@ -106,5 +107,28 @@ void inverter(char* str) {
 }
 
 int calcular_pos(char* expressao) {
+	Pilha* p = pilha_criar();
+
+	int i = 0;
+	int j = 0;
+	while(expressao[i] != '\0') {
+		pilha_empilhar(p, expressao[i]);
+		i++;
+	}
+
+	while(expressao[i] != '\0') {
+		pilha_empilhar(p, expressao[i]);
+		i++;
+	}
+	// while([j] != '\0') {
+	// 	pilha_empilhar(p, expressao[i]);
+	// 	if(isdigit(expressao[i])) {
+			
+	// 	}
+	// 	j++;
+	// }
+
+	pilha_imprimir(p);
+	j = devolve_elementos(p);
 	return 0;
 }

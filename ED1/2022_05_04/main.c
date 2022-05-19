@@ -41,7 +41,6 @@ int main(){
   pilha_imprimir(p2); // [10 20 30 40]
 
   pilha_inverter(p2);
-  pilha_imprimir(p2); // [40 30 20 10]
 
   Pilha* p3 = pilha_criar();
   TipoElemento* vetor = (TipoElemento*)malloc(5 * sizeof(TipoElemento));
