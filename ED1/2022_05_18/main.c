@@ -12,5 +12,6 @@ int main(){
   char expressao[6] = "234*+";
 
   inverter(str);
+
   calcular_pos(expressao);
 }

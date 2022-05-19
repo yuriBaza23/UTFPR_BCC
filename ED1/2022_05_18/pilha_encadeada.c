@@ -32,6 +32,28 @@ TipoElemento* devolve_elementos(Pilha* p) {
 	return vetor;	
 } 
 
+float fazer_operacao(char operacao, int v1, int v2) {
+	float v3 = 0;
+	if(operacao == '*') {
+		v3 = v1 * v2;
+	} else if(operacao == '+') {
+		v3 = v1 + v2;
+	} else if(operacao == '-') {
+		v3 = v1 - v2;
+	} else if(operacao == '/') {
+		v3 = v1 / v2;
+	}
+
+	return v3;
+}
+
+void calculadora(char* expressao) {
+	printf("--------------------------\n");
+	printf("| %s\n", expressao);
+	printf("--------------------------\n\n");
+	printf("Calculando...\n");
+}
+
 // Desenvolva as funções
 Pilha* pilha_criar() {
 	Pilha *p = (Pilha*)malloc(sizeof(Pilha));
@@ -63,8 +85,19 @@ bool pilha_empilhar(Pilha* p, TipoElemento elemento) {
 	return true;
 }
 
-bool pilha_desempilhar(Pilha* p, TipoElemento* saida) {
+int pilha_desempilhar(Pilha* p) {
+	if(!pilha_vazia(p)) {
+		No* aux = p->topo->prox;
+		TipoElemento elemento = p->topo->dado;
+		p->topo = aux;
+		p->qtdeElementos--;
 
+		if(isdigit(elemento)) {
+			return atoi(&elemento);
+		} 
+		return 0;
+	}
+	return 0;
 } 
 
 void pilha_imprimir(Pilha* p) {
@@ -108,27 +141,27 @@ void inverter(char* str) {
 
 int calcular_pos(char* expressao) {
 	Pilha* p = pilha_criar();
+	float num;
+	bool j = false;
+
+	calculadora(expressao);
 
 	int i = 0;
-	int j = 0;
 	while(expressao[i] != '\0') {
 		pilha_empilhar(p, expressao[i]);
+		if(!isdigit(expressao[i])) {
+			pilha_desempilhar(p);
+			int v1 = pilha_desempilhar(p);
+			int v2 = j ? num : pilha_desempilhar(p);
+
+			num = fazer_operacao(expressao[i], v1, v2);
+
+			j = true;
+		}
+
 		i++;
 	}
 
-	while(expressao[i] != '\0') {
-		pilha_empilhar(p, expressao[i]);
-		i++;
-	}
-	// while([j] != '\0') {
-	// 	pilha_empilhar(p, expressao[i]);
-	// 	if(isdigit(expressao[i])) {
-			
-	// 	}
-	// 	j++;
-	// }
-
-	pilha_imprimir(p);
-	j = devolve_elementos(p);
+	printf("Resultado: %.2f\n", num);
 	return 0;
 }

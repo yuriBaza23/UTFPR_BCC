@@ -17,7 +17,7 @@ typedef struct pilha Pilha;
 Pilha* pilha_criar();
 void pilha_destruir(Pilha** endereco);
 bool pilha_empilhar(Pilha* p, TipoElemento elemento);
-bool pilha_desempilhar(Pilha* p, TipoElemento* saida); 
+int pilha_desempilhar(Pilha* p); 
 void pilha_imprimir(Pilha* p);
 bool pilha_vazia(Pilha* p);
 
